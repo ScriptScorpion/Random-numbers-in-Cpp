@@ -1,17 +1,7 @@
-#include <random>
 #include <iostream>
-
+#include <ctime>
 int main() {
-    long int a = 0,b = 0;
-    std::cout << "Enter scope of numbers with space: ";
-    std::cin >> a >> b;
-    if (!std::cin) {
-        std::cout << "Error getting numbers \n";
-        return 1;
-    }
-    std::random_device rd;  
-    std::mt19937 gen(rd());  
-    std::uniform_int_distribution <int> dist(a,b);
-    printf("%d", dist(gen));
+    srand(time(0));
+    std::cout << rand() % 100;
     return 0;
 }
